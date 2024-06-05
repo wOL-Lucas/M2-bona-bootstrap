@@ -13,7 +13,7 @@ const validateForm = () => {
     errors.email = "*O seu email é obrigatório";
   }
 
-  if (message.value === "" || message.length < 10) {
+  if (message.value === "" || message.value.length < 10) {
     errors.message = "*Sua mensagem deve ter pelo menos 10 caracteres";
   }
 
