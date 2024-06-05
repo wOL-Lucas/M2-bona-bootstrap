@@ -23,7 +23,6 @@ const validateForm = () => {
     message.value = "";
   }
 
-  console.log(errors);
   return errors;
 };
 
@@ -65,4 +64,19 @@ const handleSubmit = (e) => {
   document.getElementById("nameError").innerText = errors.name || "";
   document.getElementById("emailError").innerText = errors.email || "";
   document.getElementById("messageError").innerText = errors.message || "";
+};
+
+const isMobileDevice = () => {
+  var screenWidth = window.innerWidth;
+  var screenHeight = window.innerHeight;
+
+  return screenWidth < screenHeight;
+};
+
+const handleScreenResize = () => {
+  if (!isMobileDevice()) {
+    return (document.querySelector("footer").style.position = "fixed");
+  }
+
+  document.querySelector("footer").style.position = "";
 };
